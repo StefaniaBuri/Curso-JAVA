@@ -1,5 +1,7 @@
 ---
 Title: IFCD052P JAVA
+Place: Centro de Formación Digital San Blas
+Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas/curso/curso-programacion-en-java/
 ---
 
 ## CALENDARIO 📆
