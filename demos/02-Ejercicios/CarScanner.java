@@ -37,9 +37,9 @@ public class CarScanner {
         System.out.println("What is the price?");
         price = scanner.nextInt();
 
-        System.out.println("Your car is " + name + " and the year of manufacture is  " + year + "\n"
+        System.out.println(" Your car is " + name + " \n The year of manufacture is " + year + "\n"
                 + " Is a familiar car? " + isFamiliar + " \n The number of seats is " + seats + "\n The weight is "
-                + weight + "kg" + "\n The price is " + price + ""); // muestra lo que escribimos
+                + weight + "kg" + "\n The price is " + price + "€"); // muestra lo que escribimos
         scanner.close();
     }
 }
