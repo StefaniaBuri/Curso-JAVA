@@ -51,8 +51,20 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 
 ### DIA 4
 
+- Repaso tipos de datos
 - Profundizar clases y objetos
 - Crear una clase e instanciar objetos
 - Elementos estáticos de una clase
 - printf
+- Operadores
+- Ejercicio: clase Car
+
+### DIA 4
+
+- Review:
+  - Datos y variables
+  - Tipos primitivos
+  - Clases y objetos
+  -
+- (Elementos estáticos de una clase)
 - Operadores
