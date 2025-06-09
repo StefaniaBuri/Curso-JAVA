@@ -65,6 +65,15 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
   - Datos y variables
   - Tipos primitivos
   - Clases y objetos
-  -
-- (Elementos estáticos de una clase)
+  - Entrada y salida para el usuario
+- Elementos estáticos de una clase
+  - Ejemplo clase Car
+  - Class Calc: cálculos básicos
+- Concepto de funciones:
+  - Definición
+  - Parámetros y argumentos
+  -  Retorno y efectos secundarios
+  - Invocación
+  - Ámbito de las variables
+  
 - Operadores
