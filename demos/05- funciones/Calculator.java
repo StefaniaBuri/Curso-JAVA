@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Calculadora {
+public class Calculator {
 
     static int add(int num1, int num2) {
         return num1 + num2;
@@ -28,13 +28,11 @@ public class Calculadora {
      * }
      */
 
-
     // OPTION 2
     static void showResult(String operation, int result) {
         System.out.printf("El resultado de la %s es %s", operation, result);
         System.out.println("");
     }
-
 
     public static void main(String[] args) {
 
@@ -59,7 +57,6 @@ public class Calculadora {
 
         // Cerramos scanner porque no vamos a pedir mas info
         scanner.close();
-
 
         // Imprimo resultado llamando a una función
         System.out.printf("Operaciones con %s y %s \n", number1, number2);
