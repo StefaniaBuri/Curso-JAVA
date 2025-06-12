@@ -10,7 +10,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 
 - Configurar _VNC VIEWER_
 - ¿Que es Java? - Lenguajes compilados / interpretados -> mixto
-- JVM(java virtual machine): emulador que permite que java se ejecute -> JRE(java runtime enviroment) (usuario) || _JDK_(desarrollador)
+- JVM(java virtual machine): emulador que permite que java se ejecute -> JRE(java runtime environment) (usuario) || _JDK_(desarrollador)
 - Posibles herramientas: IDE v. Editor de Código
 - Instalar _VSC_ + _Plugin_ Java
 - Otras extensiones: theme, icons
@@ -37,7 +37,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Review: Git - GitHub
 - Java: Hola Mundo
 - Estructura de un programa
-- public class / metodo _main_
+- public class / método _main_
 - println()
 - Tipos de datos primitivos
 - Números (6)
@@ -59,9 +59,10 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Operadores
 - Ejercicio: clase Car
 
-### DIA 4
+### DIA 5
 
 - Review:
+  - Instalación y configuración del entorno
   - Datos y variables
   - Tipos primitivos
   - Clases y objetos
@@ -70,10 +71,46 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
   - Ejemplo clase Car
   - Class Calc: cálculos básicos
 - Concepto de funciones:
-  - Definición
+  - Definición Función: conjunto de instrucciones con nombre.
   - Parámetros y argumentos
-  -  Retorno y efectos secundarios
+  - Retorno y efectos secundarios
   - Invocación
   - Ámbito de las variables
   
-- Operadores
+  ### DIA 6
+- Review: Funciones
+  - Ejercicio: Areas
+  - Sobrecarga de funciones
+- Args en la función main
+  - argumentos desde CLI
+  - Conversión de String a enteros
+  - Uso de métodos públicos de otras clases
+- Operadores:
+  - Asignación
+  - Aritméticos
+  - Comparación
+- Condiciones: IF
+  - Ejercicio: 
+    - Números pares/impares
+    - if
+    - if defensivo: precondiciones
+    - valores previos (else por defecto)
+    - Saludo según edad: else if
+
+### DIA 7
+- Review: Funciones
+- Solución ejercicio AgeGreetings
+- Ejercicio: School
+  - else if()
+  - Arrays
+  - Ternarios
+- Switch / case
+  - Ejemplo: Week
+  - Ejercicio: WeekTranslator
+- Operadores lógicos (AND - OR)
+- Ejercicio: Tienda
+
+### DIA 7
+- Review
+- Solución ejercicio Shop
+- Diferentes soluciones ejercicio Shop
