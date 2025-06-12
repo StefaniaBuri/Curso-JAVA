@@ -8,7 +8,7 @@ public class Operators {
                * 
                / 
                %
-            - Comparación -> expresión boolean  
+            - Relacionales o de Comparación -> expresión boolean  
                ==  
                !=  
                < 
