@@ -16,5 +16,9 @@ El programa muestra el total a pagar, incluyendo el coste del envío y el descue
 
 AMPLIACIÓN DEL CASO ANTERIOR
 
+Preguntar el número de paquetes de cada tipo comprados. El coste de cada paquete sera distinto en cada caso.
+
+Aplicar una promoción del 10% si se compra por un valor superior a 1000 €.
+Si no se llega a 1000 €, indicar cuanto falta para llegar a la promoción.
 
 

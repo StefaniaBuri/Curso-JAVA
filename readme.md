@@ -110,7 +110,21 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Operadores lógicos (AND - OR)
 - Ejercicio: Tienda
 
-### DIA 7
+### DIA 8
 - Review
-- Solución ejercicio Shop
 - Diferentes soluciones ejercicio Shop
+- Ampliación Shop
+  - Constantes
+  - Condiciones
+  - Valores por defecto iniciales
+  - Cálculo de valores
+  - Salida con formato usando template strings
+  - Reutilización de código
+- Números random:
+  - Librería: Math.random()
+  - Class Random
+- Ejercicio: Roll dice
+- Ejercicios extras
+
+### DIA 9
+- Iteraciones: bucles
