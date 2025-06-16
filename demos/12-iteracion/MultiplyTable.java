@@ -7,21 +7,21 @@ public class MultiplyTable {
 
     private static final int LIMIT_NUMBER = 12;
 
-    //revisar
+    
     private static int getNumByScanner() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Dime la tabla que deseas calcular del 1 al 10");
+        System.out.println("Escribe 0 si deseas todas las tablas");
         int num1 = scanner.nextInt();
+        System.out.println("");
         scanner.close();
         return num1;
     }
 
-    //revisar
+    
     private static void showTable(int number) {
-      System.out.printf("La tabla de multiplicar del %s es: ", number);
-       //int number = getNumByScanner();
-       //int result = i*i;
+      System.out.printf("La tabla de multiplicar del %s es: \n", number);
        
         for (int index = 0; index <= LIMIT_NUMBER; index++) {
             System.out.printf("%s x %s = %s \n", number, index, number*index);
@@ -47,6 +47,5 @@ public class MultiplyTable {
         showAllTables();
        } 
 
-      
     }
 }
