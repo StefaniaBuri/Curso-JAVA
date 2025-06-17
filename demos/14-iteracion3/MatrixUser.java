@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MatrixUser {
@@ -91,11 +92,59 @@ public class MatrixUser {
         }
     }
 
+    static void showData2(String[] data) {
+        System.out.println("---------------------------");
+        System.out.print("Aquí tienes tus animales en esta tirada\n");
+
+        for (String item : data) {
+             System.out.printf("%-15s",item);
+        }
+         System.out.println("");
+    }
+
+    static String[] selectRandoms(String[][] data) {
+        String[] selectedAnimals = new String[data.length];
+        Random r = new Random();
+
+        /* for (String animal : selectedAnimals) {
+            selectedAnimals[animal] = data;
+        } */
+
+        for (int i = 0; i < selectedAnimals.length; i++) {
+            selectedAnimals[i] = data[i][ r.nextInt(2)];
+        }
+        return selectedAnimals;
+    }
+
 
     public static void main(String[] args) {
         //showData(getData());
         //showData2(getData2());
 
-        showData2(getAnimals());
+        //showData2(getAnimals());
+
+
+        //Ejercicio: Muestra una matriz de animales seleccionados de manera random introducidos por el usuario anteriormente
+        String[][] animals = getAnimals();
+        showData2(animals);
+
+        //Ampliación: quieres continuar la tirada? para esto hay que cerrar todos los scanner anteriores
+        Scanner scanner = new Scanner(System.in);
+        boolean wantContinue = true; 
+
+        while (wantContinue) {
+            String[] selectedAnimals = selectRandoms(animals);
+            showData2(selectedAnimals);
+
+             System.out.println("¿Quieres continuar (S/N)?");
+             String answer = scanner.nextLine();
+
+             if(answer.toLowerCase().equals("n") || answer.toLowerCase().equals("no")) {
+                wantContinue = false;
+             }
+        }
+        scanner.close();
+        System.out.println("Gracias por todo");
+        
     }
 }

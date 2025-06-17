@@ -17,11 +17,11 @@ public class Matrix {
     }
 
     static void matrix() { //las matrices son infinitas dimensiones
-        String[][] matrixNames = {
+        /* String[][] matrixNames = {
             {"Ana", "Carmen", "Julian"},
             {"Cepeda", "Diez","Alvarado"},
             {"Carranza", "Pino", "Peralta"}
-        };
+        }; */
 
 
         int[][] matrixNumber = new int[3][3]; // la primera casilla son filas y segundo "columnas"(posiciones de las filas)
