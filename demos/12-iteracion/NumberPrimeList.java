@@ -29,7 +29,7 @@ public class NumberPrimeList {
      /* static List<Integer> calculatePrime(int number) {
         List<Integer> result = new ArrayList<>();
         for (int index = 2; index <= number; index++) {
-            if (NumberPrime. isPrime2(index)) {
+            if (NumberPrime.isPrime2(index)) {
                 result.add(index);
             }
         }
