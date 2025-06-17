@@ -106,9 +106,6 @@ public class MatrixUser {
         String[] selectedAnimals = new String[data.length];
         Random r = new Random();
 
-        /* for (String animal : selectedAnimals) {
-            selectedAnimals[animal] = data;
-        } */
 
         for (int i = 0; i < selectedAnimals.length; i++) {
             selectedAnimals[i] = data[i][ r.nextInt(2)];

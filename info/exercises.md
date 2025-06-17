@@ -21,27 +21,22 @@
 - Escribe una función que reciba una frase y revise si es un Palíndromo.
 
 - Crea una función que cuente las vocales que contiene una palabra dada por parámetros.
+- Escribe una función que compruebe si una cadena de texto contiene todas las vocales.
 
 - Crea una función que verifique si una cadena de texto recibida por parámetros es un Pangrama (contiene todas las letras del abecedario).
-
-- Escribe una función que compruebe si una cadena de texto contiene todas las vocales.
 
 - Crea una función que realice una cuenta atrás desde un número recibido por parámetros.
 
 - Crea una función que simule el lanzamiento de un dado e imprime por consola el resultado cada vez que se ejecuta.
   - Aplicar while a repetirla
 
-- Escribe una función que compruebe si una cadena de texto contiene todas las vocales.
-
-- Crea una función que realice una cuenta atrás desde un número recibido por parámetros.
-
 ******************************************************************************
 ¿Fechas?
-Escribe una función que reciba por parámetros el año de nacimiento, y calcule la edad de la persona.
+- Escribe una función que reciba por parámetros el año de nacimiento, y calcule la edad de la persona.
 
-Crea una función que reciba la edad de una persona por parámetros y verifique si es mayor de edad. Imprime por consola un string con el resultado.
+- Crea una función que reciba la edad de una persona por parámetros y verifique si es mayor de edad. Imprime por consola un string con el resultado.
 
-Crea una función que reciba un año por parámetros y compruebe e imprima por consola si el año es bisiesto o no.
+- Crea una función que reciba un año por parámetros y compruebe e imprima por consola si el año es bisiesto o no.
 
 -----------------------------------------------------------------------------
 
