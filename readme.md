@@ -127,4 +127,33 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejercicios extras
 
 ### DIA 9
-- Iteraciones: bucles
+- Iteraciones: bucles:
+  - Contadores(for)
+  - Centinelas(while / do while)
+- Iteraciones con contador
+  - for
+  - foreach
+- Uso con arrays
+- Bucle infinito -> condición de salida
+- Ejemplo: tablas de multiplicar
+- Ejemplo: número primo
+- Ejemplo: lista de números primos
+
+### DIA 10
+- Solución del ejercicio números primos
+- Iteraciones con centinela (while)
+  - Condición en el bucle
+  - Salida mediante break
+  - continue
+- Ejemplo: manejo de Strings
+- Ejemplo: palíndromo
+- Otros ejercicios propuestos
+
+### DIA 11
+- Iteraciones do-while.
+  - Diferencia con while
+- Uso de iteraciones al pedir datos al usuario
+- Arrays: vectores[] y matrices[][]
+  - Creación
+  - Recorrido: for / for each
+- Ejercicio: Pedirle palabras al usuario

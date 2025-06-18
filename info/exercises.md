@@ -38,6 +38,9 @@
 
 - Crea una función que reciba un año por parámetros y compruebe e imprima por consola si el año es bisiesto o no.
 
+- Cálculo de la media de una serie de números
+- Cálculo del factorial
+
 -----------------------------------------------------------------------------
 
 Clásicos
