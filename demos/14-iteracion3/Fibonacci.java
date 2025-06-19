@@ -9,10 +9,10 @@ public class Fibonacci {
     El usuario debe ser preguntado por este número al iniciar la aplicación. */
     // scanner, y algoritmo. los primero le doy,
 
+    private static List<Integer> serie;
+    private static int limit;
 
-    //revisar el codigo
-
-    static int askNumber() {
+    /* static int askNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce un número para calcular la serie");
         int number = scanner.nextInt();
@@ -20,10 +20,10 @@ public class Fibonacci {
         scanner.close();
         
         return number;
-    }
+    } */
 
-    //OPTION 2
-    static int getFibonacci(int limit) {
+    //OPTION
+    /* static int getFibonacci(int limit) {
         if (limit <= 1) {
             return limit;
         }
@@ -42,63 +42,72 @@ public class Fibonacci {
       int result = getFibonacci(limit);
       
         System.out.println(result);
-    }
+    } */
     
 
-    //Solución profe
-    static List<Integer> calculateFibonacci(int limit) {
-        //creamos dos variables que son el inicio para calcular la serie
+    // Solucion profe
+
+    private static void calculateFibonacci() {
+
         int prev = 0, next = 1;
+        Fibonacci.serie = new ArrayList<>();
 
-        //
-        List<Integer> serie = new ArrayList<>(); //creamos la lista que debe retornar
-        while (prev <= limit) {
-            serie.add(prev);
-            /* int temp = prev + next;
-            prev = next;
-            next = temp; */
-
+        while (prev <= Fibonacci.limit) {
+            Fibonacci.serie.add(prev);
+            // int temp = prev + next;
+            // prev = next;
+            // next = temp;
             next = next + prev;
             prev = next - prev;
         }
-        return serie;
     }
 
-    static void showFibonacci(int limit, List<Integer> serie) {
-       String message = "La sucesión de Fibonacci (hasta %s):\n";
-       System.out.printf(message,limit);
-       for (int item : serie) {
-        System.out.println(item);
-       }
+    private static void showFibonacci() {
+        String message = "Sucesión de Fibonacci (hasta %s):\n";
+        System.out.printf(message, Fibonacci.limit);
+        for (int item : Fibonacci.serie) {
+            System.out.println(item);
+        }
     }
 
-    static int askLimit() {
+    private static void askLimit() {
+        String message = "Indica el valor límite para tu serie de Fibonacci";
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce un número para calcular la serie");
-        int limit = scanner.nextInt();
-        System.out.println("");
-        scanner.close();
-
-        return limit;
+        System.out.println(message);
+        Fibonacci.limit = scanner.nextInt();
+        // scanner.close();
     }
 
-    static void askContinue() {
+    private static void askContinue() {
         Scanner scanner = new Scanner(System.in);
         boolean wantContinue = true;
 
+        String[] messages = {
+                "¿Quieres continuar (S/N)?",
+                "Gracias por todo"
+        };
+
         while (wantContinue) {
-            int limit = askLimit();
+            askLimit();
+            calculateFibonacci();
+            showFibonacci();
+            System.out.println(messages[0]);
+            String answer = scanner.nextLine();
+            if (answer.toLowerCase().equals("n") ||
+                    answer.toLowerCase().equals("no")) {
+                wantContinue = false;
+            }
         }
+
         scanner.close();
-        System.out.println("Gracias por todo"); 
+        System.out.println(messages[1]);
     }
 
-
     public static void main(String[] args) {
-        //askContinue();
         //showFibonacci();
-
         //getFibonacci(askNumber());
-        showInfo(askNumber());
+        //showInfo(askNumber());
+
+        askContinue();
     }
 }

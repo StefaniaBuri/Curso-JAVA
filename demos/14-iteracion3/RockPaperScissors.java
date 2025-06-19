@@ -129,6 +129,7 @@ static void play(String player) {
    private static byte userDice;
    private static byte machineDice;
 
+
    private static void askUserDice() {
      String message = "Indica tu tirada: (PI, PA, TI)";
      Scanner scanner = new Scanner(System.in);
@@ -149,7 +150,6 @@ static void play(String player) {
                 break;
         }
      }
-     scanner.close();
    }
 
    private static void generateMachineDice() {
@@ -160,11 +160,11 @@ static void play(String player) {
    private static void showResult() {
     System.out.println("Jugada de la máquina " + dices[machineDice]);
     System.out.println("Tu jugada "+ dices[userDice]);
+
     byte winner = RESULTS[machineDice-1][userDice-1];
     System.out.println("Resultado: "+ diceResult[winner]);
    }
 
-   //revisar
     private static void askContinue() {
         Scanner scanner = new Scanner(System.in);
         boolean wantContinue = true;
@@ -181,12 +181,14 @@ static void play(String player) {
 
             System.out.println(messages[0]);
             String answer = scanner.nextLine();
-            if(answer.toLowerCase().equals("n") || answer.toLowerCase().equals("no")) {
+            if(answer.toLowerCase().equals("n") || 
+                answer.toLowerCase().equals("no")) {
                 wantContinue = false;
             }
-            
         }
-        //scanner.close();
+        
+        scanner.close();
+        System.out.println(messages[1]);
    }
    
 

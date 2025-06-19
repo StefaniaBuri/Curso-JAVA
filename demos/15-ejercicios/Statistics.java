@@ -1,6 +1,6 @@
 
 public class Statistics {
-    //Calcular la media de una serie de numeros
+    //Calcular la media de una serie de números
 
     static int sumAllArray(int[] data) {
         int sum = 0;
