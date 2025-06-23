@@ -157,3 +157,45 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
   - Creación
   - Recorrido: for / for each
 - Ejercicio: Pedirle palabras al usuario
+
+### DIA 12
+- Ejercicios:
+  - Fibonacci
+  - Piedra, papel o tijeras
+  - Estadísticos -> Varargs
+  - Factorial
+
+### DIA 13
+- Factorial(recursivo)
+- VSC: Proyectos y packages
+- OOP
+  - Concepto
+  - Abstracción
+  - Encapsulación
+  - Herencia
+  - Polimorfismo
+- Abstracción: clases y objetos
+  - Ejemplo: clase Person
+  - Propiedades y métodos
+  - Propiedades estáticas
+  - Constructores
+  - Miembros estáticos
+- Encapsulación
+  - Ámbitos
+    - Private
+    - Protected (default)
+    - Public
+- Ámbitos y packages
+- Ejercicio: clase Character
+
+### DIA 14
+- Ejercicio: clase Character
+  - Añadir Enum
+  - Añadir métodos de instancia
+  - Añadir static: id
+- Ejercicio: Factura (Invoice)
+
+### DIA 15
+- Ejercicio: Factura (Invoice) - solución
+  - chcp 65001 to switch the command prompt encoding to UTF-8
+- Herencia
