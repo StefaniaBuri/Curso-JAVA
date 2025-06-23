@@ -1,5 +1,9 @@
 
+import base.Animal;
+import base.Dog;
 import base.Person;
+import base.Pet;
+import base.Square;
 import game.Character;
 import game.Role;
 import game.Species;
@@ -40,6 +44,15 @@ public class App {
 
     }
 
+    public static void playPets() {
+        Dog pet1 = new Dog("Rufus", 2);
+        System.out.println( pet1 instanceof Dog );
+        System.out.println( pet1 instanceof Pet );
+        System.out.println( pet1 instanceof Object );
+        pet1.getHobbie();
+        pet1.eat();
+    }
+
 
     public static void main(String[] args) {
        Person person1 = new Person("Pepe", 20);
@@ -57,7 +70,30 @@ public class App {
        //System.out.println(Person.countInstances);
 
        // playWithPersons();
-        prepareGame();
+        //prepareGame();
+
+        /* Animal animal1 = new Animal();
+        animal1.name = "Perro";
+
+        Animal animal2 = new Animal("Gato");
+        
+        System.out.println(animal1.name);
+        System.out.println(animal2.name); */
+
+        playPets();
+
+        Square sq1 = new Square(10);
+        String type = "Cuadrado";
+        System.out.println(sq1 instanceof Object);
+        System.out.println(type instanceof Object);
+        System.out.println(type);
+        System.out.println(type.toString());
+        // System.out.println(sq1);
+        System.out.println(sq1.toString());
+
+         Square sq2 = new Square(10);
+         System.out.println(sq1 == sq2); //false porque la referencia es distinta
+         System.out.println(sq1.equals(sq2)); //false
     }
        
 }

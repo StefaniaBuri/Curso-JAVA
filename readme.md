@@ -197,5 +197,5 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 
 ### DIA 15
 - Ejercicio: Factura (Invoice) - solución
-  - chcp 65001 to switch the command prompt encoding to UTF-8
+  - En la terminal escribir: `chcp 65001` to switch the command prompt encoding to UTF-8. Para que aparezca el €
 - Herencia
