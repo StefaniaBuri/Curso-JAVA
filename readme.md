@@ -196,6 +196,19 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejercicio: Factura (Invoice)
 
 ### DIA 15
-- Ejercicio: Factura (Invoice) - solución
-  - En la terminal escribir: `chcp 65001` to switch the command prompt encoding to UTF-8. Para que aparezca el €
-- Herencia
+- Ejercicio: Factura (Invoice) - solución:
+  - Análisis semántico -> modelado
+  - Relaciones de dependencia (composición)
+  - Crear clases y enum
+  - Repartir responsabilidades
+  - En la terminal escribir: `chcp 65001` to switch the command prompt encoding to UTF-8. Para que aparezca el €.
+
+- Herencia:
+  - class extends
+  - constructor: super()
+  - override methods: super.method()
+  - visibilidad: public, protected, private, "default"
+  - Ejemplo Pet -> Dog, Cat
+  - instance of
+
+  ### DIA 16
