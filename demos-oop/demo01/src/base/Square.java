@@ -2,8 +2,10 @@ package base;
 
 public class Square implements Cloneable{
     public int side;
+    //public int id;
 
     public Square(int side) {
+        //this.id = (int) (Math.random()*100);  // no sirve cuando haces clones de objeto porque tendrán diferentes id
         this.side = side;
     }
 
@@ -27,7 +29,7 @@ public class Square implements Cloneable{
         return false;
     }
 
-     @Override
+    @Override
     public Object clone() throws CloneNotSupportedException {
         // devuelve clone del object actual
         return super.clone(); 
