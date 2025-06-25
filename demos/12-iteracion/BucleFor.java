@@ -34,6 +34,11 @@ public class BucleFor {
         for (int index = 0; index < sample.length(); index++) {
             System.out.println(sample.charAt(index));
         }
+
+        //Option 2 foreach
+         for (char item : sample.toCharArray()) { //convierte un string en un array de caracteres
+            System.out.println(item);
+        } 
     }
 
     static void iterateStringForEach() {
