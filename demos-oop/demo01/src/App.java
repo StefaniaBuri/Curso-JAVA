@@ -1,8 +1,7 @@
-
-import base.Animal;
-import base.Dog;
+import animals.Dog;
+import animals.IDog;
+import animals.Pet;
 import base.Person;
-import base.Pet;
 import base.Square;
 import game.Character;
 import game.Role;
@@ -45,7 +44,7 @@ public class App {
     }
 
     public static void playPets() {
-        Dog pet1 = new Dog("Rufus", 2);
+        IDog pet1 = new Dog("Rufus", 2);
         System.out.println( pet1 instanceof Dog );
         System.out.println( pet1 instanceof Pet );
         System.out.println( pet1 instanceof Object );

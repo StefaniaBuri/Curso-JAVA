@@ -1,11 +1,16 @@
-package base;
+package animals;
 
-public class Dog extends Pet {
+public class Dog extends Pet implements IDog {
 
     public Dog(String name, int age) {
         super(name, age);
     }
 
+    public Dog(String name) {
+        super(name);
+    }
+
+    @Override
     public void getHobbie() {
         sleep();
     }
@@ -15,5 +20,10 @@ public class Dog extends Pet {
         super.eat();
         String message = "Comida para perros";
         System.out.println(message);
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("Estoy ladrando");
     }
 }

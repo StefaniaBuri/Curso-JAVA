@@ -1,4 +1,4 @@
-package base;
+package animals;
 
 public class Animal {
     
