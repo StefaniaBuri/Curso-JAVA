@@ -1,5 +1,7 @@
 import animals.Cat;
 import animals.Dog;
+import animals.Duck;
+import animals.RubberDuck;
 
 public class AppPets {
 
@@ -43,6 +45,12 @@ public class AppPets {
         playWithCat();
 
         //playWithPet();
+
+        Duck d = new Duck();
+        d.fly();
+
+        RubberDuck rd = new RubberDuck();
+        rd.swim();
 
     }
 
