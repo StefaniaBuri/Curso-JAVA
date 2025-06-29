@@ -9,7 +9,7 @@ import products.IProduct;
 public class Order implements IOrder {
 
     private String reference;
-    private Set<IProduct> products;
+    //private Set<IProduct> products;
     private Set<IContainer> containers;
 
     //CONSTRUCTOR
@@ -21,14 +21,6 @@ public class Order implements IOrder {
 
     // MÉTODOS
 
-    public Set<IProduct> getCalculateProducts() {
-        Set<IProduct> products = new HashSet<>();
-        for (IContainer container : containers) {
-            products.addAll(container.getProducts());
-        }
-        return products;
-    }
-
     @Override
     public void addContainer(IContainer container) {
         containers.add(container);
@@ -36,13 +28,14 @@ public class Order implements IOrder {
 
     @Override
     public IContainer addProduct(IProduct product) {
+        //iteramos todos los contenedores
         for (IContainer container : containers) {
+            //comprobamos si el contenedor admite el producto que queremos añadir. 
             if(container.canInsert(product)) {
                 return container;
             }
         }
-        //return addProduct(product);
-        return null;
+        return null;//no hay sitio para el producto
     }
 
     //GETTERS
@@ -54,6 +47,20 @@ public class Order implements IOrder {
 
     @Override
     public Set<IProduct> getProducts() {
+        // Creamos un conjunto de productos nulo y recorriendo los contenedores, inicializar el nuevo conjunto con los productos del primer container e ir añadiendo los del resto.
+        Set<IProduct> products = new HashSet<>();
+        for (IContainer c : containers) {
+            products.addAll(c.getProducts());
+        }
+        return products;
+    }
+
+    @Override
+    public Set<IProduct> getCalculateProducts() {
+        Set<IProduct> products = new HashSet<>();
+        for (IContainer container : containers) {
+            products.addAll(container.getProducts());
+        }
         return products;
     }
 
@@ -62,17 +69,27 @@ public class Order implements IOrder {
         return reference;
     }
 
+    // @Override
+    // public String toString() {
+    //     String message = """
+    //             Pedido: %s 
+    //             Hash: %s
+    //             """.formatted(reference, super.toString());
+
+    //     for (IContainer container : containers) {
+    //         message += container;
+    //     }
+    //     return message;
+    // }
+
     @Override
     public String toString() {
-        String message = """
-                Pedido: %s 
-                Hash: %s
-                """.formatted(reference, super.toString());
-
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pedido: " + reference + "\n");
         for (IContainer container : containers) {
-            message += container;
+            sb.append("\t" + container + "\n");
         }
-        return message;
+        return sb.toString();
     }
 
 }

@@ -9,18 +9,12 @@ public class Box extends Container {
     private int length;// largo
 
     public Box(String reference, int width, int length, int heigh) {
-        super(reference);
+        super(reference, 0);//Caja no tiene resistencia,le pasamos 0
         this.width = width;
         this.length = length;
         this.heigh = heigh;
     }
 
-    /*
-     * @Override
-     * public int getStrength() { //resistencia
-     * return strength;
-     * }
-     */
 
     @Override
     public int calculateArea() {
@@ -34,6 +28,6 @@ public class Box extends Container {
 
     @Override
     public boolean isResistance(IProduct product) { // resistencia
-        return true;
+        return true;//true porque resistencia: "cualquier peso"
     }
 }

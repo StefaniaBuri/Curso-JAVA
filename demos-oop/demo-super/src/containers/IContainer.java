@@ -7,17 +7,23 @@ import products.IProduct;
 
 public interface IContainer {
 
+    // Getters
+
     String getReference();
 
-    int calculateVolumen();
-
-    // int getStrength();
+    int getResistance();
 
     ContainerType getType();
 
+    Set<IProduct> getProducts();
+
+    // Propiedades calculadas
+
     int calculateArea();
 
-    Set<IProduct> getProducts();
+    int calculateVolumen();
+
+     // Lógica de negocio
 
     int volumenAvailable();
 

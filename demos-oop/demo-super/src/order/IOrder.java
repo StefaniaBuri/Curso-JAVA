@@ -6,10 +6,16 @@ import products.IProduct;
 
 public interface IOrder {
 
-    String getReference();
-    Set<IProduct> getProducts();
-    Set<IContainer> getContainers();
+    // Getters
 
+    String getReference();
+    
+    Set<IContainer> getContainers();
+    Set<IProduct> getProducts();
+
+    // Lógica de negocio 
+
+    Set<IProduct> getCalculateProducts();
     void addContainer(IContainer container);
     IContainer addProduct(IProduct product);
 

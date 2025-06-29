@@ -37,6 +37,17 @@ public class ArraysDemo {
         showArray(data3);
         System.out.println("--------------------");
 
+        Integer[] numbers = {1, 2, 34, 5, 89};
+        List<Integer> temp = Arrays.asList(numbers);
+        System.out.println("Temp list " + temp);
+        //showArray(data3);
+
+        int[] numbers2 = {1, 2, 34, 5, 89};
+        List temp2 = Arrays.asList(numbers);
+        System.out.println("Temp list " + temp2);
+
+        System.out.println(data3[0]); // 1
+
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);

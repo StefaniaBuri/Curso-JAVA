@@ -244,3 +244,31 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Clases abstractas
 - Interfaces
   - Ejemplo de segregación de interfaces
+
+### DIA 18
+- Ejercicio: supermarket(part1)
+  - Análisis y diseño.
+  - UML
+  - Interfaces
+- Estructura de datos: Set
+- Clases principales:
+  - Supermarket (main)
+  - Order
+  - Container
+  - Product
+- Enums
+
+### DIA 19
+- Ejercicio: supermarket(part2)
+- Review
+- Jerarquía de Clases
+  - Container (Abstract) -> Box / Bag
+- Instancia de objetos
+  - Override de toString
+- Jerarquía de Clases
+  - Product (Abstract)
+    - Food
+    - Hygiene
+    - Drugstore
+    - Pet
+- Lógica del embolsado

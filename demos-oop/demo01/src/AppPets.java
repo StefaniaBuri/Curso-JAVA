@@ -5,8 +5,8 @@ import animals.RubberDuck;
 
 public class AppPets {
 
-
     public static void playWithDog() {
+
         Dog pet1 = new Dog("Rufus", 2);
        /*  System.out.println( pet1 instanceof Dog );
         System.out.println( pet1 instanceof Pet );

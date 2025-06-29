@@ -1,6 +1,6 @@
 package animals;
 
-public interface IFDuck {
+public interface IBirds {
 
     void fly();
 

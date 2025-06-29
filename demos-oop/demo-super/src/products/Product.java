@@ -1,8 +1,5 @@
 package products;
 
-import java.util.Locale.Category;
-import java.util.Set;
-
 import containers.IContainer;
 
 public abstract class Product implements IProduct {
@@ -11,7 +8,7 @@ public abstract class Product implements IProduct {
     private int volumen;
     private int weight;
 
-    Set<IContainer> containers;
+    private IContainer container;
 
     public Product(String reference, int volumen, int weight) {
         this.reference = reference;
@@ -19,11 +16,7 @@ public abstract class Product implements IProduct {
         this.weight = weight;
     }
 
-    @Override
-    public Category getCategory() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+    //GETTERS
 
     @Override
     public String getReference() {
@@ -31,7 +24,7 @@ public abstract class Product implements IProduct {
     }
 
     @Override
-    public int calculateVolume() {
+    public int getVolume() {
         return volumen;
     }
 
@@ -40,27 +33,39 @@ public abstract class Product implements IProduct {
         return weight;
     }
 
-    @Override
-    public boolean hasSpace(IContainer container) {
-        // TODO Auto-generated method stub
-        return false;
-    }
+    //METHODS
 
     @Override
-    public boolean isCompatible(IProduct product) {
-        // TODO Auto-generated method stub
-        return false;
+    public boolean hasSpace(IContainer container) {
+        //p tendra espacio en un container si su volumen es mas pequeño que el volumen disponible en el container
+        return container.volumenAvailable() > volumen;
     }
+
+    
 
     @Override
     public void putInto(IContainer container) {
-        // TODO Auto-generated method stub
-
+        // la compatibilidad la delagan las clases hijas, no implementamos este metodo aki
+        //solo devolvemos en que container ha sido metido el producto.
+        this.container = container;
     }
+
+
+    /* @Override
+    public String toString() {
+        String message = "[%s] %s %s cm3 - %s g".formatted(
+            getCategory().toString().toUpperCase(), reference, volumen, weight);
+        return message;
+    } */
 
     @Override
     public String toString() {
-        String message = "[%s] %s %s cm3 - %s g".formatted(getCategory().toString().toUpperCase(), reference, volumen, weight);
+        String message = """
+                Producto [categoria = %s, referencia = %s, peso = %sg, volumen = %scm3, contenedor = %s]
+                """.formatted(getCategory(), reference, weight, volumen,container.getReference());
+
+        // return "Producto [categoria = " + getCategory() + ", referencia = " + reference + ", peso = " + weight +
+        // ", volumen = " + volumen + ", contenedor = " + container.getReference() + "]";
         return message;
     }
 

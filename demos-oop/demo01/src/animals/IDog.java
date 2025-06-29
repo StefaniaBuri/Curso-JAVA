@@ -8,4 +8,6 @@ public interface IDog {
 
     void makeSound();
 
+    String makeSounds();
+
 }

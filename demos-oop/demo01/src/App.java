@@ -44,11 +44,12 @@ public class App {
     }
 
     public static void playPets() {
-        IDog pet1 = new Dog("Rufus", 2);
+        Dog pet1 = new Dog("Rufus", 2);
         System.out.println( pet1 instanceof Dog );
         System.out.println( pet1 instanceof Pet );
         System.out.println( pet1 instanceof Object );
         pet1.getHobbie();
+        pet1.sleep();
         pet1.eat();
     }
 

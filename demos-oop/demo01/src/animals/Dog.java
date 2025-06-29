@@ -26,4 +26,11 @@ public class Dog extends Pet implements IDog {
     public void makeSound() {
         System.out.println("Estoy ladrando");
     }
+
+    @Override
+    public String makeSounds() {
+        String message = "Guau";
+       System.out.println(message);
+       return message;   
+    }
 }

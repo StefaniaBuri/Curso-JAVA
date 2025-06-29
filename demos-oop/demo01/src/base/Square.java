@@ -16,7 +16,8 @@ public class Square implements Cloneable{
 
     @Override //un método del padre, sobrescribo en el hijo
     public String toString() {
-        return super.toString() + "\n" + "Square {side: %s}".formatted(side);
+        return super.toString() + "\n" + 
+        "Square {side: %s}".formatted(side);
         //return "Square {side: %s}".formatted(side);
     }
 

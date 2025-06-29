@@ -1,18 +1,22 @@
 package products;
 
-import java.util.Locale.Category;
-
 import containers.IContainer;
+import enums.Category;
 
 public interface IProduct {
+
+    // Getters
 
     String getReference();
 
     int getWeight();
 
-    int calculateVolume();
+    int getVolume();
 
     Category getCategory();
+
+
+    // Lógica de negocio
 
     boolean isCompatible(IProduct product);
 

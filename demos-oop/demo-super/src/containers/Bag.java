@@ -7,11 +7,11 @@ public class Bag extends Container {
 
     private int length;// largo
 
-    public Bag(String reference, int length, int heigh, int strength) {
-        super(reference);
+    public Bag(String reference, int length, int heigh, int resistance) {
+        super(reference, resistance);
         this.length = length;
         this.heigh = heigh;
-        this.strength = strength; // resistencia
+        //this.resistance = resistance; // resistencia
     }
 
     @Override
@@ -25,13 +25,13 @@ public class Bag extends Container {
         return (int) (Math.PI * radio * radio);
     }
 
-    public int calculateDiameter() {
+    private int calculateDiameter() {
         return (int) ((2 * length) / Math.PI);
     }
 
-    @Override
-    public boolean isResistance(IProduct product) {
-        return true;
-    }
+    // @Override
+    // public boolean isResistance(IProduct product) {
+    //     return false;
+    // } //el metodo lo hereda de container
 
 }
