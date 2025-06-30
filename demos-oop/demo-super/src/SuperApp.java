@@ -1,5 +1,4 @@
 
-import animals.Pet;
 import containers.Bag;
 import containers.Box;
 import containers.IContainer;
@@ -63,13 +62,13 @@ public class SuperApp {
 
 
         /* RESUMEN:
-           Desde la clase Supermercado(main) creamos un pedido, con una bolsa y una caja. llamamos al metodo addProduct() de un pedido para agregar productos, dentro del metodo iteramos sobre todos los
-         * contenedores del pedido. Por cada container, llamamos al metodo canInsert(). Hace comprobaciones para poder agregar el producto:
-         *  - Primero: comprueba si el contenedor resiste al producto. isResistance() metodo que pertenece a container.
+           Desde la clase Supermercado(main) creamos un pedido, con una bolsa y una caja. llamamos al método addProduct() de un pedido para agregar productos, dentro del método iteramos sobre todos los
+         * contenedores del pedido. Por cada container, llamamos al método canInsert(). Hace comprobaciones para poder agregar el producto:
+         *  - Primero: comprueba si el contenedor resiste al producto. isResistance() método que pertenece a container.
          *  - Segundo: pregunta a producto si tiene espacio en el container, container chequea el volumenAvailable().
-         *  - Tercero: compatibilidad. Container debe iterar sobre todos los productos que ya contiene y comprabar si el producto nuevo es compatible con los ya añadidos.
+         *  - Tercero: compatibilidad. Container debe iterar sobre todos los productos que ya contiene y comprobar si el producto nuevo es compatible con los ya añadidos.
          * Finalmente, si las 3 comprobaciones son ok, Container agrega a su lista de productos el nuevo producto.
-         * Despues informa al producto en que container ha sido metido
+         * Después informa al producto en que container ha sido metido
          */
 
     }

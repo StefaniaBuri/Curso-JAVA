@@ -27,8 +27,9 @@ public abstract class Container implements IContainer {
 
     @Override
     public boolean canInsert(IProduct product) {
+        //OPTION 1
         //Inicializamos llamando al metodo del container y pasandole producto
-        boolean resistanceOk = isResistance(product);
+        boolean resistanceOk = isResistance(product); 
 
         //Preguntamos a producto si tiene espacio en este container
         boolean volumenOk = product.hasSpace(this);
@@ -51,11 +52,35 @@ public abstract class Container implements IContainer {
             product.putInto(this);
         }
         return accept;
+
+
+        /* OPTION 2 - SOLUCION PROFE
+         * 
+         * //Es resistente?
+         *  if(!this.isResistance(product)) {
+         *      return false;
+         *  }
+         * 
+         * //Tiene espacio?
+         * if(!product.hasSpace(this)) {
+         *      return false;
+         *  }
+         * 
+         * //Son compatibles?
+         *  for(IProduct element : products) {
+         *      if(!product.isCompatible(element){
+         *          return false;
+         *      }
+         *  }
+         * 
+         * return true;
+         */
     }
 
     @Override
     public boolean isResistance(IProduct product) {
-        // Un Container resiste a un producto si su resistencia es mayor que el peso del producto. Hay que inicializar la resistencia de un container. BOX no importa porque tiene override el metodo isResistance(). Pero BAG si tiene resistencia 0, jamas podra ser mayor que el peso del producto(q es +).En clase Bag, modificamos constructor
+        // Un Container resiste a un producto si su resistencia es mayor que el peso del producto. Hay que inicializar la resistencia de un container. 
+        //BOX no importa porque tiene override el metodo isResistance(). Pero BAG si tiene resistencia 0, jamas podra ser mayor que el peso del producto(q es +).En clase Bag, modificamos constructor
         return resistance > product.getWeight();
         //en caja especificamos su comportamiento
     }
@@ -68,11 +93,11 @@ public abstract class Container implements IContainer {
 
     //volumen ocupado: sumamos el volumen de cada producto del contenedor.
     private int volumenInUse() {
-        int res = 0;
-        for (IProduct p : products) {
-            res += p.getVolume();
+        int inUse = 0;
+        for (IProduct product : products) {
+            inUse += product.getVolume();
         }
-        return res;
+        return inUse;
     }
 
     @Override

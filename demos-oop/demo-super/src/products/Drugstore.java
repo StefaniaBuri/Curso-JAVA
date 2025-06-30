@@ -15,8 +15,9 @@ public class Drugstore extends Product {
 
     @Override
     public boolean isCompatible(IProduct product) {
-        //
+        //compatible con Hygiene y Drogueria
         return !Category.FOOD.equals(product.getCategory()) && !Category.PETS.equals(product.getCategory());
+        //return product.getCategory() == Category.DRUGSTORE || product.getCategory() == Category.HYGIENE;
     }
 
 }

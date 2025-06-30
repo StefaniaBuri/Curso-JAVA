@@ -28,11 +28,11 @@ public class Order implements IOrder {
 
     @Override
     public IContainer addProduct(IProduct product) {
-        //iteramos todos los contenedores
+        //iteramos todos los contenedores, no crea un container nuevo
         for (IContainer container : containers) {
             //comprobamos si el contenedor admite el producto que queremos añadir. 
             if(container.canInsert(product)) {
-                return container;
+                return container;  //devuelve el container donde va ir el producto
             }
         }
         return null;//no hay sitio para el producto

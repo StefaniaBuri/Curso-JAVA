@@ -32,6 +32,6 @@ public class Bag extends Container {
     // @Override
     // public boolean isResistance(IProduct product) {
     //     return false;
-    // } //el metodo lo hereda de container
+    // } //el método lo hereda de container
 
 }

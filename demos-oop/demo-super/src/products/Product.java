@@ -37,17 +37,18 @@ public abstract class Product implements IProduct {
 
     @Override
     public boolean hasSpace(IContainer container) {
-        //p tendra espacio en un container si su volumen es mas pequeño que el volumen disponible en el container
+        //producto tendrá espacio en un container si su volumen es mas pequeño que el volumen disponible en el container
         return container.volumenAvailable() > volumen;
+        //return volumen <= container.volumenAvailable();
     }
 
-    
 
     @Override
     public void putInto(IContainer container) {
-        // la compatibilidad la delagan las clases hijas, no implementamos este metodo aki
+        // la compatibilidad la delegan las clases hijas, no implementamos este método aki
         //solo devolvemos en que container ha sido metido el producto.
         this.container = container;
+        //container.getProducts().add(this);
     }
 
 
@@ -61,11 +62,8 @@ public abstract class Product implements IProduct {
     @Override
     public String toString() {
         String message = """
-                Producto [categoria = %s, referencia = %s, peso = %sg, volumen = %scm3, contenedor = %s]
+                Producto [Categoría = %s, Referencia = %s, Peso = %sg, Volumen = %scm3, Contenedor = %s]
                 """.formatted(getCategory(), reference, weight, volumen,container.getReference());
-
-        // return "Producto [categoria = " + getCategory() + ", referencia = " + reference + ", peso = " + weight +
-        // ", volumen = " + volumen + ", contenedor = " + container.getReference() + "]";
         return message;
     }
 

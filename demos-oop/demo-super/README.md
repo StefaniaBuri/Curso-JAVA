@@ -2,22 +2,25 @@
 
 Ejercicio del supermercado en el libro de JAVA
 
+## Requisitos del proyecto
 
-## Getting Started
+Nos han encargado el desarrollo de una aplicación para gestionar el embolsado de los productos de los pedidos de supermercado online sOOper.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Actualmente hay dos tipos de contenedores, bolsas y cajas. Las cajas son rectangulares y aguantan “cualquier peso”, mientras que las bolsas tienen una resistencia máxima. En ambos casos, tenemos un volumen determinado por sus dimensiones. Hay varios tamaños disponibles.
 
-## Folder Structure
+Los productos del supermercado se dividen en varias categorías: Alimentación, Higiene, Droguería y Mascotas. Alimentación a su vez, se subdivide en Congelados, Frescos y NoPerecederos.
 
-The workspace contains two folders by default, where:
+Cada producto tendrá un volumen y un peso determinado, que tendremos que considerar “ocupado” cuando lo embolsemos.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Los productos de alimentación no pueden ser mezclados con los de las otras categorías. Los productos de higiene no se pueden mezclar ni con los de alimentación, y los de droguería, ni con los de alimentación ni con los de mascotas.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+En la primera versión de esta aplicación no es necesario optimizar la distribución, ni tener en cuenta temperaturas ni caducidades.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Pasos a seguir: 
+1) Identificar los sustantivos del enunciado, que podrán o no ser nuestras futuras clases, y los verbos, que podrán o no ser nuestros futuros métodos.
+2) Elaborar un diagrama UML para representar el sistema.
+3) Implementarlo:
+  a) Crear las interfaces y clases 
+  b) Añadir atributos y métodos 
+  c) Implementar métodos 
+  d) Probarlo

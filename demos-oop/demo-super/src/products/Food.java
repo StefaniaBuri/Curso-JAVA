@@ -15,8 +15,9 @@ public class Food extends Product{
 
     @Override
     public boolean isCompatible(IProduct product) {
-        // El producto deber se compatible con alimentacion, usamos equals para comparar categoria del producto == Food
+        // El producto deber se compatible con alimentación, usamos equals para comparar categoría del producto == Food
         return Category.FOOD.equals(product.getCategory());
+        //return product.getCategory() == Category.FOOD;
     }
 
 }

@@ -15,8 +15,9 @@ public class Hygiene extends Product {
 
     @Override
     public boolean isCompatible(IProduct product) {
-        // Cualquier producto entra salvo los de alimentacion, lo contrario
+        // Cualquier producto entra salvo los de alimentacion, lo contrario. Compatible Pet y Hygiene
         return !Category.FOOD.equals(product.getCategory());
+        //return product.getCategory() == Category.PETS || product.getCategory() == Category.HYGIENE;
     }
 
 }
