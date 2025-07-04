@@ -78,6 +78,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
   - Ámbito de las variables
   
   ### DIA 6
+
 - Review: Funciones
   - Ejercicio: Areas
   - Sobrecarga de funciones
@@ -98,6 +99,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
     - Saludo según edad: else if
 
 ### DIA 7
+
 - Review: Funciones
 - Solución ejercicio AgeGreetings
 - Ejercicio: School
@@ -111,6 +113,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejercicio: Tienda
 
 ### DIA 8
+
 - Review
 - Diferentes soluciones ejercicio Shop
 - Ampliación Shop
@@ -127,6 +130,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejercicios extras
 
 ### DIA 9
+
 - Iteraciones: bucles:
   - Contadores(for)
   - Centinelas(while / do while)
@@ -140,6 +144,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejemplo: lista de números primos
 
 ### DIA 10
+
 - Solución del ejercicio números primos
 - Iteraciones con centinela (while)
   - Condición en el bucle
@@ -150,6 +155,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Otros ejercicios propuestos
 
 ### DIA 11
+
 - Iteraciones do-while.
   - Diferencia con while
 - Uso de iteraciones al pedir datos al usuario
@@ -159,6 +165,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejercicio: Pedirle palabras al usuario
 
 ### DIA 12
+
 - Ejercicios:
   - Fibonacci
   - Piedra, papel o tijeras
@@ -166,6 +173,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
   - Factorial
 
 ### DIA 13
+
 - Factorial(recursivo)
 - VSC: Proyectos y packages
 - OOP
@@ -189,6 +197,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejercicio: clase Character
 
 ### DIA 14
+
 - Ejercicio: clase Character
   - Añadir Enum
   - Añadir métodos de instancia
@@ -196,6 +205,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Ejercicio: Factura (Invoice)
 
 ### DIA 15
+
 - Ejercicio: Factura (Invoice) - solución:
   - Análisis semántico -> modelado
   - Relaciones de dependencia (composición)
@@ -246,6 +256,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
   - Ejemplo de segregación de interfaces
 
 ### DIA 18
+
 - Ejercicio: supermarket(part1)
   - Análisis y diseño.
   - UML
@@ -259,6 +270,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Enums
 
 ### DIA 19
+
 - Ejercicio: supermarket(part2)
 - Review
 - Jerarquía de Clases
@@ -272,3 +284,87 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
     - Drugstore
     - Pet
 - Lógica del embolsado
+
+### DIA 20
+
+- Ejercicio: Supermarket final
+- Lógica del embolsado(continuación)
+- Javadoc
+- Proyectos Maven: gestor de dependencias.
+- Errores y excepciones en Java
+  - Errores
+  - Tipos de excepciones en Java
+    - Runtime exceptions: IndexOutBoundsException, NullPointerException
+      - Runtime: Exception en tiempo de ejecución
+    - Checked exceptions: Java detecta la exception, avisa y obliga a controlarla.
+- Aparición de excepciones en Java
+  - Creación de excepciones en el sistema
+  - Tratamiento de excepciones:
+    - Throws: avisa que ha detectado una posible exception checked dentro
+    - Throw: lanza la exception, lo usa:
+      - Java
+      - Programador: exception de Java / exception propias
+    - Try / Catch: gestiona la exception. Try vigila, Catch captura la exception
+    - Finally
+
+### DIA 21
+
+- Review: Maven
+- Lanzamiento de runtime exceptions propias de java
+  - IndexOutOfBoundsException -> throw en el código de charAt()
+  - NullPointerException
+  - ClassCastException 
+- Api de las exceptions: API(Application Programming Interface) interfaz de programación
+- Excepciones propias:
+  - RuntimeException - TechnicalException
+  - Checked Exception - BusinessException
+- Ejemplo: Calculator
+  - Refactorización OOP
+  - Division por 0 - ArithmeticException
+    - Rethrow como BusinessException
+    - Exception cause
+  - Scanner y Try with resources
+- Ejercicio: Factorial
+  - Refactorización OOP
+  - Gestión de excepciones
+
+### DIA 22
+
+- Ejercicio: Factorial (solución)
+  - Refactorización OOP
+  - Formateo de números: NumberFormat
+  - Gestión de excepciones
+- Excepciones en Java (continuación)
+  - Finally
+    -Uso después de un catch con throw o return
+  - Novedades
+    - Con recursos (try-with-resources)
+    - Multi-captura de excepciones
+  - Malas prácticas
+    - No tratadas
+    - Tratadas incorrectamente (e.g. imprimir stack trace: e.printStackTrace())
+    - Perder la historia
+    - Generalización
+- Arquitectura/Patrones de diseño
+  - MVC
+  - Vistas y controladores
+- Ejemplo: calculadora
+  - Vista: CalcView
+  - Controlador: CalcController
+  - Aplicación: CalcApp
+  - Inyección de dependencias
+
+### DIA 23
+
+- Arquitectura/Patrones de diseño (continuación)
+  - Ejercicio: calculadora
+    - Gestión de excepciones
+- Testing
+  - ¿Qué es un test?
+  - Tipos de test
+    - Unitarios
+    - De integración
+    - De sistema
+  - Herramientas de testing en Java
+    - JUnit
+    - Mockito
