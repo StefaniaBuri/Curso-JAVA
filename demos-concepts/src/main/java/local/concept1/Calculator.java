@@ -51,14 +51,11 @@ public class Calculator {
         return result;
     }
 
-    @SuppressWarnings("resource")
     private int getInteger (String message) {
-       
         System.out.println(message);
         int num = scanner.nextInt();
         //scanner.close();
         return num;
-        
     }
 
     void showResult(String operation, int result) {

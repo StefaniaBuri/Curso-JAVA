@@ -18,15 +18,18 @@ public class CalcController extends Calc {
     }
 
     public int add() {
-        return num1 + num2;
+        int result = num1 + num2;
+        return result;
     }
 
     public int subtraction() {
-        return num1 - num2;
+        int result = num1 - num2;
+        return result;
     }
 
     public int multiply() {
-        return num1 * num2;
+        int result = num1 * num2;
+        return result;
     }
 
     public int division() throws BusinessException {
@@ -36,16 +39,15 @@ public class CalcController extends Calc {
        try {
            int result = num1 / num2;
            return result;
+
        } catch (ArithmeticException e) {
            throw new BusinessException(ErrorCodes.ERROR_ZERO, "Dividendo por 0", e);
        }
     }
 
     public double decimalDivide() {
-      
         double result = (double) num1 / num2;
         return result;
-
     }
 
 
@@ -56,9 +58,9 @@ public class CalcController extends Calc {
                     ErrorCodes.ERROR_ZERO,
                     "Dividiendo por 0");
         }
-       
-            double result = (double) num1 / num2;
-            return result;
+
+        double result = (double) num1 / num2;
+        return result;
     }
     
 
@@ -68,8 +70,15 @@ public class CalcController extends Calc {
     }
 
     public long calculateFactorial() throws BusinessException {
-    
        return calculateFactorial((short)num1);
+    }
+
+    public long calculateFactorial(byte i) throws BusinessException {
+        if(i == 1) {
+             return calculateFactorial((short)num1);
+        }
+        return calculateFactorial((short)num2);
+      
     }
 
     public long calculateFactorial(short number) throws BusinessException {
@@ -93,6 +102,30 @@ public class CalcController extends Calc {
             result = result * i;
             // result *= i;
         }
+        return result;
+    }
+
+    public int calculatePow() throws BusinessException {
+        return calculatePow(num1, num2);
+    }
+
+    public int calculatePow(int num1, int num2) throws BusinessException {
+        //OPTION 1
+        //int answer =(int) Math.pow(num1, num2);
+        //return answer;
+
+        if (num2 < 0) {
+            String message = "No se puede calcular el exponente negativo de " + num2; 
+            // throw new BusinessException(ErrorCodes.ERROR_NEGATIVE,"No se puede calcular factorial de " + number);
+            throw new BusinessException(ErrorCodes.ERROR_NEGATIVE, message);
+        }
+
+        //OPTION 2
+        int result = 1;
+        for (int i = 1; i <= num2; i++) {
+            result *= num1;
+        }
+        
         return result;
     }
 }
