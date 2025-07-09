@@ -50,7 +50,7 @@ public class CalculateAge {
      * bisiesto si: es divisible entre 4, excepto si también es divisible entre 100, a menos que también sea divisible entre 400.
     */
 
-   static void isLeapYear(int year) {
+   static void isLeapYear(int year) { //año bisiesto
         if (year < 0) {
             System.out.println("El año no puede ser un numero negativo");
         } else if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
