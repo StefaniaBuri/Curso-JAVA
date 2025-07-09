@@ -1,7 +1,10 @@
 package local.concept_test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.Scanner;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,11 +32,21 @@ public class InputTest {
         //se lo pasamos a System.in
         System.setIn(inputStream);
 
+        // Comparamos userInput
+        assertEquals(userInput, simulateScanner());
+
     }
 
     @AfterEach
     void tearDown() {
         //Recuperamos el System.in original
         System.setIn(originalIn);
+    }
+
+    public String simulateScanner() {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Ingresa tu nombre: ");
+            return scanner.nextLine();
+        }
     }
 }
