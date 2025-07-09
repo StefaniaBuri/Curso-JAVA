@@ -8,9 +8,9 @@ public class CalcApp {
         System.out.println("Calculadora");
         CalcController controller = new CalcController();
         CalcView view = new CalcView(controller);
-        System.out.println(view);
-        System.out.println(controller);
+        //System.out.println(view);
+        //System.out.println(controller);
 
-        view.askContinue();
+        view.show();
     }
 }
