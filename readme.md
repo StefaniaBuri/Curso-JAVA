@@ -368,3 +368,78 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
   - Herramientas de testing en Java
     - JUnit
     - Mockito
+
+### DIA 24
+
+- Tests unitarios con JUnit
+  - Configuración (review)
+  - Configuración sin Maven
+- Tests de CalcController
+  - assertEquals
+  - casos de uso
+  - casos con excepciones
+    - assertTrue() / fail
+  - valores especiales
+    - Double.NaN
+    - Double.POSITIVE_INFINITY
+
+### DIA 25
+
+- Actualizaciones del sistema
+  - JDK 21
+  - Maven 3.9
+  - JUnit 5
+  - Mockito
+
+- Tests unitarios con JUnit
+  - casos con excepciones -> lambdas
+  - métodos privados en la vista
+  - tests de la vista
+    - mock input (Streams)
+    - mock output (Streams)
+    - mock controller (Mockito)
+      - casos correctos thenReturn()
+      - casos con excepciones thenThrow()
+  - TDD
+
+### DIA 26
+
+- Ampliación de CLI
+  - 2 menus
+  - System.exit(0)
+  - test ajustados al nuevo CLI
+- Test parametrizados
+  - Instalación con Maven
+  - Uso
+- Lambdas
+  - Definición: @FunctionalInterface
+  - Uso
+- Datos
+  - Valores primitivos: números
+  - Objetos numéricos
+
+### DIA 27
+
+- Datos (continuación)
+  - Strings / StringBuffers
+  - LocalDates / LocalTimeDates
+  - Ejemplo: calcular edad
+- Arrays
+  - Instancias
+  - Clase de utilidad Arrays
+- Genéricos
+  - Creación
+  - Uso
+- Collection: Introducción
+
+### DIA 28
+
+- Collections
+  - Interface Collections
+  - List
+    - ArrayList
+    - LinkedList
+  - Set
+    - HashSet
+    - LinkedHashSet
+    - TreeSet
