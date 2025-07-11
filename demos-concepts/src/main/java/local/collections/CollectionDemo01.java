@@ -8,9 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-
-//COMPLETAR CODIGO
-
 public class CollectionDemo01 {
 
     /*
@@ -100,7 +97,7 @@ public class CollectionDemo01 {
      * 
      */
 
-@SuppressWarnings("rawtypes")
+    @SuppressWarnings("rawtypes")
     public void showCollection(Collection collection) {
         // Mostrar ejemplos de las clases de la API de colecciones
         // como ArrayList, LinkedList, siempre que implementen el interface Collection.
@@ -132,7 +129,6 @@ public class CollectionDemo01 {
         for (Object element : collection) {
             System.out.println("Element: " + element);
         }
-
     }
 
 
