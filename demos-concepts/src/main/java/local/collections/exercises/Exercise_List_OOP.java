@@ -1,4 +1,4 @@
-package local.collections;
+package local.collections.exercises;
 
 import java.util.ArrayList;
 import java.util.Collections;

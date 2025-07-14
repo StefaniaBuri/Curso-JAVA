@@ -1,4 +1,4 @@
-package local.collections;
+package local.collections.exercises;
 
 import java.util.ArrayList;
 //import java.util.Collections;
@@ -100,7 +100,7 @@ public class Exercise_List {
 
         /* 8- Crea un iterador y muestra uno a uno los valores de la lista original. */
         /*
-         * Solucion profe
+         * Solución profe
          * System.out.println("Iterando sobre la lista de días:");
          * Iterator<String> it = listDays.iterator();
          * 
