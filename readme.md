@@ -443,3 +443,29 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
     - HashSet
     - LinkedHashSet
     - TreeSet
+  - Ejercicio: Listas
+
+### Día 29
+
+- Iterators
+- Ejercicio: solución
+  - Versión básica
+  - Versión OOP
+- Ejercicio: Palíndromo (Stack)
+- Ejercicio: Figuras (Listas & Interfaces)
+- Ejercicio propuesto: Baraja
+
+### Día 30
+
+- Ejercicio propuesto: Baraja
+- Maps
+- Ejercicio:
+  - PhoneAgenda (Map)
+  - PhoneAgenda (sin Map)
+
+### Día 31
+
+- Solución PhoneAgenda (Map v. sin Map)
+  . == v.equals
+  . uso de streams
+- Persistencia: Ficheros
