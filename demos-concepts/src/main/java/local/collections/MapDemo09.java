@@ -9,6 +9,14 @@ public class MapDemo09 {
 
     // Map is a collection that maps keys to values
     // We can use a HashMap to implement a map
+    /* 
+     * Operaciones principales:
+    - Agregar: put(key, value): Inserta un nuevo par clave-valor en la tabla.
+    - Obtener: get(key): Retorna el valor asociado a la clave especificada.
+    - Eliminar: remove(key): Elimina el par clave-valor asociado a la clave especificada.
+    - Verificar existencia: containsKey(key), containsValue(value): Verifica si la clave o el valor existen en la tabla, respectivamente.
+    - Obtener tamaño: size(): Devuelve la cantidad de pares clave-valor en la tabla. 
+     */
 
     Map<Character, String> map = new HashMap<>();
 
@@ -19,6 +27,44 @@ public class MapDemo09 {
 
     public MapDemo09() {
         useMap();
+    }
+
+    void makeStringMap() {
+
+        // Put elements into the map
+        map.put('A', "Alpha");
+        map.put('B', "Beta");
+        map.put('C', "Charlie");
+        map.put('D', "Delta");
+        map.put('E', "Echo");
+        map.put('F', "Foxtrot");
+        map.put('G', "Golf");
+
+        // Display the size of the map
+        System.out.println("Size of the map: " + map.size());
+        System.out.println(map);
+
+        // Claves
+        Set<Character> keys = map.keySet();
+        System.out.println("Keys in the map: " + keys);
+        // Keys in the map: [A, B, C, D, E, F, G]
+        
+        // Values
+        Collection<String> values = map.values();
+        System.out.println("Values in the map: " + values);
+        // Values in the map: [Alpha, Beta, Charlie, Delta, Echo, Foxtrot, Golf]
+        
+        // Entradas
+        // Conjunto (Set) de entradas que son tuplas: key-value pairs
+        Set<Map.Entry<Character, String>> entries = map.entrySet();
+        System.out.println("Entries in the map: " + entries);
+        // Entries in the map: [A=Alpha, B=Beta, C=Charlie, D=Delta, E=Echo, F=Foxtrot, G=Golf]
+
+
+        // Retrieve elements from the map
+        for (Character key : map.keySet()) {
+            System.out.println(key + ": " + map.get(key));
+        }
     }
 
     public void useMap() {
@@ -117,6 +163,7 @@ public class MapDemo09 {
         MapDemo09 map = new MapDemo09();
         map.showMap();
         map.useMap();
+        map.makeStringMap();
         System.out.println("--------------------");
         map.modifyMap();
     }

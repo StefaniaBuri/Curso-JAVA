@@ -13,7 +13,9 @@ import java.util.Scanner;
 public class FileSystem1 {
 
     //Leer lista ficheros y carpetas
-    static void listFiles(String pathName) {
+    public static void listFiles(String pathName) {
+        // El objeto File representa un archivo o directorio en el sistema de archivos.
+       // Independientemente de si este existe o no.
         File file = new File(pathName);
         String [] list = file.list();
 
@@ -78,8 +80,8 @@ public class FileSystem1 {
             return;
         }
 
-        /* Crear un directorio, debemos llamar al método mkdir()
-         * mkdir() crea un único directorio, mientras que mkdir() crea todos los directorios necesarios en la ruta especificada.
+        /* Crear un directorio, debemos llamar al método mkdir() o mkdirs()
+         * mkdir() crea un único directorio, mientras que mkdirs() crea todos los directorios necesarios en la ruta especificada.
          * Devuelven true o false dependiendo de si la operación fue exitosa o no.
          */
         if(!file.mkdir()) {
@@ -113,6 +115,9 @@ public class FileSystem1 {
             System.err.println("Error creating file: " + pathName);
             return;
         }
+        // If the file is created successfully, we can write to it.
+        // For now, we just print a message.
+        // In a real application, we would write to the file here.
         System.out.println("File: " + pathName + " created.");
     }
 
@@ -129,7 +134,7 @@ public class FileSystem1 {
             System.out.println("Failed to delete " + type + ": " + pathName);
             return;
         }
-        System.out.println("Archivo borrado");
+        System.out.println(type + " " + pathName + " deleted.");
 
     }
 
@@ -141,12 +146,16 @@ public class FileSystem1 {
             return;
         }
 
+        // Here we would write the content to the file.
+        // For example, using FileWriter or BufferedWriter.
         try(FileWriter writer = new FileWriter(pathName)) { //esto sirve para cerrar el writer
             writer.write(content);
             //writer.close();
         } catch (IOException e) {
             System.err.println("Error writing file. " + pathName);
         }
+         // For now, we just print a message.
+        // This is a placeholder for the actual file writing logic.
         System.out.println("Writing to file " + pathName + ": " + content);
         System.out.println("------------------------");
     }
@@ -178,6 +187,39 @@ public class FileSystem1 {
         }
         System.out.println(lines);
         System.out.println(sb.toString());
+    }
+
+    public static List<String> readFile3(String pathName) {
+        File file = new File(pathName);
+        List<String> lines = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+
+        if(!file.exists()) {
+            System.out.println("File does not exist: " + pathName);
+            return lines;
+        }
+
+
+        try(Scanner scanner = new Scanner(file)) {
+            // Scanner is used to read the file line by line
+            // It throws FileNotFoundException if the file does not exist
+            // or if there is an error reading the file.
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+                lines.add(line);
+                sb.append(line);
+                sb.append("\n");
+            }
+            System.out.println("Reading file: " + pathName);
+        } catch (FileNotFoundException e) {
+            System.out.println("Error reading file: " + pathName);
+            return lines;
+        }
+        System.out.println(lines);
+        System.out.println(sb.toString());
+
+        return lines;
     }
 
 

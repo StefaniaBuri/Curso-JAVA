@@ -468,4 +468,12 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 - Solución PhoneAgenda (Map v. sin Map)
   . == v.equals
   . uso de streams
-- Persistencia: Ficheros
+- Persistencia: Ficheros(1)
+  - java.io.File
+  - FileSystem
+  - FileWriting
+
+### Día 32
+- Solución ejercicio SaveUserData
+- Persistencia: Ficheros(2)
+  - java.nio.Path
