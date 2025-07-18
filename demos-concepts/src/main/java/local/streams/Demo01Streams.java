@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
-//COMPLETAR 
+// https://dev.java/learn/api/streams/
+
 
 public class Demo01Streams {
 
@@ -13,7 +14,11 @@ public class Demo01Streams {
     IntStream numStream = Arrays.stream(numbers);
 
     public int sumSquareGreaterThan(int limit, IntStream sNumber) {
-       return sNumber.map(num -> num * num).filter(num -> num > limit).reduce((acc, num) -> acc += num).orElse(-1); // -1 significa que no ha funcionado
+       return sNumber
+       .map(num -> num * num)
+       .filter(num -> num > limit)
+       .reduce((acc, num) -> acc += num)
+       .orElse(-1); // -1 significa que no ha funcionado
     }
 
     public void makeForEach(IntStream numStream) {
@@ -33,7 +38,10 @@ public class Demo01Streams {
     }
 
     public void makeReduce() {
-        OptionalInt newValue = numStream.reduce((acc, num) -> acc += num); // parámetro lambda -> devuelve new stream
+        OptionalInt newValue = numStream.reduce((int acc, int number) -> {
+            acc = acc + number;
+            return acc;
+        }); // parámetro lambda -> devuelve new stream
        System.out.println(newValue);
     }
 
