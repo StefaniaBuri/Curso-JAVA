@@ -3,7 +3,7 @@ package com.cdsb.files.exercises;
 import java.util.List;
 import java.util.Scanner;
 
-import com.cdsb.files.FileSystem2_Nio;
+import com.cdsb.files.FileSystem2;
 
 public class SaveUser2 {
     /*
@@ -52,8 +52,8 @@ public class SaveUser2 {
     }
 
     public void saveUserData() {
-        FileSystem2_Nio.createFile(pathName);
-        String result = FileSystem2_Nio.writeFile(pathName, makeFullName());
+        FileSystem2.createFile(pathName);
+        String result = FileSystem2.writeFile(pathName, makeFullName());
         System.out.println(result);
     }
 
@@ -66,7 +66,7 @@ public class SaveUser2 {
     }
 
     public void readUserData() {
-        List<String> read = FileSystem2_Nio.readFileToList(pathName);
+        List<String> read = FileSystem2.readFileToList(pathName);
         showUserData(read);
     }
 

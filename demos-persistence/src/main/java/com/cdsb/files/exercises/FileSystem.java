@@ -10,25 +10,25 @@ import java.util.Scanner;
 
 //Solución profe
 
-public abstract class FileSystem2 {
+public abstract class FileSystem {
 
     private static String[] messages = {
-            "[8][OK_DELETE][O]%s %s deleted",
-            "[6][OK_FO_CREATE][O]Directory %s created",
-            "[10][OK_FI_CREATE][O]File %s created",
-            "[13][OK_WRITE][O]Writing to file %s: %s",
-            "[3][FO_EXISTS][W] Directory %s exist",
-            "[4][FI_EXISTS][W] File %s exist",
-            "[14][FI_NOT][W]File does not exist: %s",
-            "[0][FO_NOT][W]Directory %s does not exist",
-            "[11][CONTENT_EMPTY][W]Content is empty, nothing to write to file: %s",
-            "[1][NOT_IS_FO][W] %s is not a directory",
-            "[2][FI_NOT][W] No files found in the directory: %s",
-            "[5][FAIL_FO][E]Failed to create directory: %s",
-            "[9][FAIL_FI][E]Failed to create file: %s",
-            "[7][FAIL_DELETE][E]Failed to delete %s: %s",
-            "[12][ERROR_WR][E]Error writing file: %s",
-            "[15][ERROR_RE][E]Error reading file: %s"
+        "[8][OK_DELETE][O]%s %s deleted",
+        "[6][OK_FO_CREATE][O]Directory %s created",
+        "[10][OK_FI_CREATE][O]File %s created",
+        "[13][OK_WRITE][O]Writing to file %s: %s",
+        "[3][FO_EXISTS][W] Directory %s exist",
+        "[4][FI_EXISTS][W] File %s exist",
+        "[14][FI_NOT][W]File does not exist: %s",
+        "[0][FO_NOT][W]Directory %s does not exist",
+        "[11][CONTENT_EMPTY][W]Content is empty, nothing to write to file: %s",
+        "[1][NOT_IS_FO][W] %s is not a directory",
+        "[2][FI_NOT][W] No files found in the directory: %s",
+        "[5][FAIL_FO][E]Failed to create directory: %s",
+        "[9][FAIL_FI][E]Failed to create file: %s",
+        "[7][FAIL_DELETE][E]Failed to delete %s: %s",
+        "[12][ERROR_WR][E]Error writing file: %s",
+        "[15][ERROR_RE][E]Error reading file: %s"
     };
 
     public static String listFiles(String pathName) {
@@ -118,12 +118,11 @@ public abstract class FileSystem2 {
 
         try (FileWriter writer = new FileWriter(pathName)) {
             writer.write(content);
+            return messages[13].formatted(pathName, content);
             // writer.close();
         } catch (IOException e) {
             return messages[12].formatted(pathName);
         }
-
-        return messages[13].formatted(pathName, content);
     }
 
     public static List<String> readFileToList(String pathName) {

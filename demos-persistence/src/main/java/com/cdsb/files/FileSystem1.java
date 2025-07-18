@@ -16,6 +16,7 @@ public class FileSystem1 {
     public static void listFiles(String pathName) {
         // El objeto File representa un archivo o directorio en el sistema de archivos.
        // Independientemente de si este existe o no.
+
         File file = new File(pathName);
         String [] list = file.list();
 
@@ -148,13 +149,15 @@ public class FileSystem1 {
 
         // Here we would write the content to the file.
         // For example, using FileWriter or BufferedWriter.
+
         try(FileWriter writer = new FileWriter(pathName)) { //esto sirve para cerrar el writer
             writer.write(content);
             //writer.close();
         } catch (IOException e) {
             System.err.println("Error writing file. " + pathName);
         }
-         // For now, we just print a message.
+
+        // For now, we just print a message.
         // This is a placeholder for the actual file writing logic.
         System.out.println("Writing to file " + pathName + ": " + content);
         System.out.println("------------------------");
@@ -198,7 +201,6 @@ public class FileSystem1 {
             System.out.println("File does not exist: " + pathName);
             return lines;
         }
-
 
         try(Scanner scanner = new Scanner(file)) {
             // Scanner is used to read the file line by line

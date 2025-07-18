@@ -1,8 +1,6 @@
 package com.cdsb.files;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,14 +13,13 @@ import java.util.List;
  * directorio en sí, sino su ubicación.
  */
 
-public class FileSystem2_Nio {
-    //COMPLETAR
+public class FileSystem2 {
 
     //Leer lista ficheros y carpetas
     public static String listFiles(String pathName) {
         StringBuilder sb = new StringBuilder();
-        //Path path = Path.of(pathName);
-        Path path = Paths.get(pathName);
+        Path path = Path.of(pathName);
+        //Path path = Paths.get(pathName);
 
         if(Files.notExists(path)) {
             return MessagesFS.FO_NOT.message.formatted(pathName);
@@ -39,15 +36,44 @@ public class FileSystem2_Nio {
             });
             return sb.toString();
         } catch (IOException e) {
-            return "Error listing files" + "\n" + e.getMessage();
+            return MessagesFS.ERROR_LIST.message.formatted(pathName) + "\n" + e.getMessage();
+        }
+    }
+
+    public static String listFiles(String pathName, boolean onlyFiles) {
+        StringBuilder sb = new StringBuilder();
+        if (!onlyFiles) {
+            return listFiles(pathName);
+        }
+
+        Path path = Paths.get(pathName);
+
+        if (Files.notExists(path)) {
+            return MessagesFS.FO_NOT.message.formatted(pathName);
+        }
+
+        if (!Files.isDirectory(path)) {
+            return MessagesFS.NOT_IS_FO.message.formatted(pathName);
+        }
+
+        try {
+            Files.list(path).filter(file -> !Files.isDirectory(file)).forEach((p) -> {
+                char type = Files.isDirectory(p) ? 'D' : 'F';
+                sb.append("[").append(type).append("] ");
+                sb.append(p.getFileName()).append("\n");
+            });
+            return sb.toString();
+        } catch (IOException e) {
+            return MessagesFS.ERROR_LIST + "\n" + e.getMessage();
         }
     }
 
 
-    //Crear nuevas carpetas
+    //Crear carpetas
     public static String createFolder(String pathName) {
         //crear un path para que convierta
-        Path path = Paths.get(pathName);
+        //Path path = Paths.get(pathName);
+        Path path = Path.of(pathName);
 
         if(Files.exists(path) && Files.isDirectory(path)) {
             return MessagesFS.FO_EXISTS.message.formatted(pathName);
@@ -61,12 +87,12 @@ public class FileSystem2_Nio {
             Files.createDirectories(path);
             return MessagesFS.OK_FO_CREATE.message.formatted(pathName);
         } catch (IOException e) {
-            return  MessagesFS.FAIL_FO.message.formatted(pathName) + "\n" + e.getMessage();
+            return MessagesFS.FAIL_FO.message.formatted(pathName) + "\n" + e.getMessage();
         }
     }
 
     //Borrar carpetas/ ficheros
-    public static String deleteFile(String pathName) {
+    private static String deleteFile(String pathName) {
         Path path = Paths.get(pathName);
 
         if(Files.notExists(path)) {
@@ -84,15 +110,20 @@ public class FileSystem2_Nio {
     public static String deleteFileOrFolder(String pathName) {
         Path path = Paths.get(pathName);
 
+        if (Files.notExists(path)) {
+            return ("File or directory does not exist: " + pathName);
+        }
+
         if(!Files.isDirectory(path)) {
             deleteFile(pathName);
         }
 
         try {
             boolean hasError = Files.walk(path).sorted((a,b) -> b.compareTo(a)).anyMatch(p -> {
+                // Sort in reverse order to delete files before directories
                 try {
-                Files.delete(path);
-                return false;
+                    Files.delete(p);
+                    return false;
                 } catch (IOException e) {
                     return true;
                 }
@@ -111,7 +142,10 @@ public class FileSystem2_Nio {
     public static String createFile(String pathName) {
         Path path = Paths.get(pathName);
 
-        if(Files.exists(path)) {
+        if(Files.exists(path) && Files.isDirectory(path)) {
+            return MessagesFS.FO_EXISTS.message.formatted(pathName);
+        }
+        if (Files.exists(path)) {
             return MessagesFS.FI_EXISTS.message.formatted(pathName);
         }
 
@@ -167,34 +201,37 @@ public class FileSystem2_Nio {
         }
     }
 
-    /* public static String readFileToString(String pathName) {
+
+    public static String readFileToString(String pathName) {
+
         Path path = Paths.get(pathName);
-        if(!Files.exists(path)) {
+        if (!Files.exists(path)) {
             return MessagesFS.FI_NOT.message.formatted(pathName);
         }
-
-        StringBuilder content = new StringBuilder();
-        //Files.readAllLines(path);
-    } */
-
+        try {
+            return Files.readString(path);
+        } catch (IOException e) {
+            return MessagesFS.ERROR_RE.message.formatted(pathName) + "\n" + e.getMessage();
+        }
+    }
 
 
     public static void main(String[] args) {
         String pathName;
         pathName = "demos-persistence";
         //pathName = "no_folder";
-        //System.out.println(listFiles(pathName));
+        System.out.println(listFiles(pathName));
 
         //pathName = "demos-persistence/resources";
         //pathName = "demos-persistence/pom.xml";
 
         //pathName = "demos-persistence/resources";
         pathName = "demos-persistence/resources/samples";
-        //System.out.println(createFolder(pathName));
+        System.out.println(createFolder(pathName));
 
 
         pathName = "demos-persistence/resources/samples/sample.txt";
-       // System.out.println(writeFile(pathName, "Holaaa"));
+       System.out.println(writeFile(pathName, "Holaaa"));
 
 
 
@@ -202,7 +239,6 @@ public class FileSystem2_Nio {
         System.out.println(readFileToList(pathName));
 
        //System.out.println(deleteFolder(pathName));
-
 
     }
 }

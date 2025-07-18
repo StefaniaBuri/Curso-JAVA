@@ -1,6 +1,5 @@
 package com.cdsb.files.exercises;
 
-import java.nio.file.FileSystem;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ public class SaveUser {
      * - Nombre
      * - Apellido
      * - Apellido2
-     * 
+
      * - Guardar en un fichero user.txt
      * - Mostrar al usuario lo que hemos guardado
      */
@@ -25,7 +24,7 @@ public class SaveUser {
         getUserData();
         System.out.println("-".repeat(50));
         System.out.println("Objeto en memoria");
-        System.out.println("-".repeat(50));
+        System.out.println("-".repeat(30));
         System.out.println(this);
     }
 
@@ -51,8 +50,8 @@ public class SaveUser {
     }
 
     public void saveUserData() {
-        FileSystem2.createFile(pathName);
-        String result = FileSystem2.writeFile(pathName, makeFullName());
+        FileSystem.createFile(pathName);
+        String result = FileSystem.writeFile(pathName, makeFullName());
         System.out.println(result);
     }
 
@@ -65,7 +64,7 @@ public class SaveUser {
     }
 
     public void readUserData() {
-        List<String> read = FileSystem2.readFileToList(pathName);
+        List<String> read = FileSystem.readFileToList(pathName);
         showUserData(read);
     }
 
@@ -78,28 +77,29 @@ public class SaveUser {
 
     @Override
     public String toString() {
-
         StringBuffer sb = new StringBuffer();
-        sb.append("SaveUse\n");
-        sb.append("name: ");
+        sb.append("SaveUser\n");
+        sb.append("Name: ");
         sb.append(name);
         sb.append("\n");
-        sb.append("surname1: ");
+        sb.append("Surname: ");
         sb.append(surname);
         sb.append("\n");
-        sb.append("surname2: ");
+        sb.append("Surname2: ");
         sb.append(surname2);
         sb.append("\n");
-        sb.append("pathName: ");
+        sb.append("PathName: ");
         sb.append(pathName);
         sb.append("\n");
         return sb.toString();
     }
 
     public static void main(String[] args) {
-        SaveUser user = new SaveUser("demo-persistence/resources/user1.txt");
+        SaveUser user = new SaveUser("demos-persistence/resources/user1.txt");
         user.saveUserData();
         user.readUserData();
+
+        //falla al borrar el archivo
     }
 
 }
