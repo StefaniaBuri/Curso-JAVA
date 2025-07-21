@@ -476,4 +476,37 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 ### Día 32
 - Solución ejercicio SaveUserData
 - Persistencia: Ficheros(2)
-  - java.nio.Path
+  - java.nio.file.Path
+  - manejo de Streams
+- Ejercicio: completar FileSystem2
+
+### Día 33
+
+- Revisión FileSystem2
+- Streams
+- Serialización
+  - JSON
+- Serialización JSON con Jackson
+  - Configuración de Jackson
+  - Ejemplo: serializar un objeto
+  - Ejemplo: serializar una lista de objetos
+  - Problemas con LocalDate y LocalDateTime
+
+  ### Día 34
+
+- Serialización - JSON (continuación)
+  - Serialización de fechas y horas LocalDate y LocalDateTime (https://www.baeldung.com/jackson-serialize-dates)
+- Abstracción de los métodos de serialización
+- CRUD
+  - Concepto de CRUD
+  - Patrón de diseño: Repositorio
+  - Demo: interface Repository
+  - Demo: entidad Product
+  - Demo: ProductInMemoryRepository
+- Propuestas
+  - Testing de ProductInMemoryRepository
+  - Demo: ProductFileRepository
+
+### Día 35
+
+

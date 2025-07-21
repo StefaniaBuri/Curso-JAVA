@@ -1,11 +1,9 @@
 package com.cdsb.project.repositories;
 
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 
 public interface Repo<I, E> {
-
-    //R EVISAR
 
     List<E> readAll();
     //findAll

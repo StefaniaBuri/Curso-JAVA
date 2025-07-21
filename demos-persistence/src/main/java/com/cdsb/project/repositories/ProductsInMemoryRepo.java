@@ -2,7 +2,7 @@ package com.cdsb.project.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 
 import com.cdsb.project.entities.Product;
 
@@ -63,7 +63,6 @@ public class ProductsInMemoryRepo implements Repo<Integer, Product> {
         throw new Exception("Producto no encontrado al borrar");
     }
 
-
     @Override
     public Product updateById(Product data) throws Exception {
 
@@ -77,5 +76,4 @@ public class ProductsInMemoryRepo implements Repo<Integer, Product> {
         }
         throw new Exception("Producto no encontrado al actualizar");
     }
-
 }

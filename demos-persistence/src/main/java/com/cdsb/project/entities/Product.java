@@ -1,6 +1,5 @@
 package com.cdsb.project.entities;
 
-import java.util.Random;
 
 public class Product {
 
@@ -8,7 +7,6 @@ public class Product {
     private String name;
     private int prize;
     private int stock;
-
 
 
     public Product(int id, String name, int prize, int stock) {
