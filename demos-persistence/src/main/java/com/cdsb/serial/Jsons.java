@@ -12,7 +12,7 @@ public class Jsons {
 
     private static ObjectMapper mapper = new ObjectMapper();
 
-    private static void setConfigure(){
+    static {
         // Set visibility for fields to be accessible
         mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
 
@@ -25,7 +25,7 @@ public class Jsons {
 
 
     public static <T extends Object> String toJson(T obj) {
-        setConfigure();
+        //setConfigure();
         try {
             return mapper.writeValueAsString(obj);
         } catch (JsonProcessingException e) {
@@ -35,7 +35,7 @@ public class Jsons {
     }
 
     public static <T> T fromJson(String json, Class<T> clazz) {
-        setConfigure();
+        //setConfigure();
         try {
             return mapper.readValue(json, clazz);
         } catch (JsonProcessingException e) {
@@ -45,7 +45,7 @@ public class Jsons {
     }
 
     public static <T extends Object> void toJsonFile(T obj, String filePath) {
-        setConfigure();
+        //setConfigure();
         try {
             String json = mapper.writeValueAsString(obj);
             FileSystem2.writeFile(filePath, json);
@@ -56,7 +56,7 @@ public class Jsons {
     }
 
     public static <T> T fromJsonFile(String filePath, Class<T> clazz) {
-        setConfigure();
+        //setConfigure();
         try {
             String json = FileSystem2.readFileToString(filePath);
             return mapper.readValue(json, clazz);
