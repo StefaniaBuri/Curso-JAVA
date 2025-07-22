@@ -509,4 +509,7 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 
 ### Día 35
 
+- Review: ProductFileRepository
+- Persistencia en bases de datos (DB)
+
 
