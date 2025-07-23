@@ -5,7 +5,7 @@ import local.entities.Room;
 
 public class RoomDAO extends AbstractDAO<Room> {
 
-    RoomDAO() {
+    public RoomDAO() {
         super(Room.class);
     }
 }

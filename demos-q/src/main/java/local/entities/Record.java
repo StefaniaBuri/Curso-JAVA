@@ -20,6 +20,10 @@ public class Record {
 
     private String content;
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public Record() {
         //JPA default constructor
     }
