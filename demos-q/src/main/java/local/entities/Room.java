@@ -32,7 +32,4 @@ public class Room {
         return "Room [id=" + id + ", name=" + name + ", capacity=" + capacity + "]";
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

@@ -25,9 +25,9 @@ public abstract class AbstractDAO<E> implements IDAO<E> {
 
     @Override
     public List<E> findAll() {
+        //Lanzar query - OPTION 1
         String finalSQL = " FROM " + entityClass.getCanonicalName();
 
-        //Lanzar query
         //Query q = entityManager.createQuery(finalSQL, entityClass);
         return entityManager.createQuery(finalSQL, entityClass).getResultList(); //devuelve una query(busqueda temporal) y devuelve una lista
     }
@@ -39,11 +39,11 @@ public abstract class AbstractDAO<E> implements IDAO<E> {
     }
 
     @Override
-    public E save(E entity) {
+    public E save(E entity) { //persist = guardar datos
         entityManager.getTransaction().begin();
         entityManager.persist(entity);
         entityManager.getTransaction().commit();
-        return entity;
+        return entity;  // Return the saved entity
     }
 
     @Override
@@ -58,6 +58,10 @@ public abstract class AbstractDAO<E> implements IDAO<E> {
         entityManager.getTransaction().begin();
         entityManager.remove(entity);
         entityManager.getTransaction().commit();
+    }
+
+    public void detach(E entity) {
+        entityManager.detach(entity);
     }
 
 }

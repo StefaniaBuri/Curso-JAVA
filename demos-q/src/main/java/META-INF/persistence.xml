@@ -4,7 +4,7 @@
                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
                 version="2.2">
-      <persistence-unit name="demos-q">
+      <persistence-unit name="demos-q" transaction-type="RESOURCE_LOCAL">
           <!-- Proveedor de persistencia -->
           <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
           <!-- Clase de entidad principal -->
@@ -17,6 +17,7 @@
             <property name="jakarta.persistence.schemma-generation.database.action" value="update"/>
             <!-- Hibernate properties -->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.show_sql" value="true"/>
             <!-- hibernate.show (value= true) -> esto hace ver en la consola lo que se esta ejecutando -->
           </properties>

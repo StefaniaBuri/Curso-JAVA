@@ -16,7 +16,7 @@ public class Record {
     @Column(name="record_id")
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private UUID id; //genera automaticamente los UUID
 
     private String content;
 
