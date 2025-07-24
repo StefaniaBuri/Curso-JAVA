@@ -14,6 +14,6 @@ public interface IDAO<E> {
 
     void update(E entity);
 
-    // <ID> void delete(ID id);
+    // <ID> void deleteById(ID id);
     void delete(E entity);
 }

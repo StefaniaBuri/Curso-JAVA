@@ -1,26 +1,22 @@
 package local;
 
 import java.time.LocalDateTime;
-
+import java.time.LocalDate;
+import java.util.List;
 import local.entities.Meeting;
-
-
 import local.repositories.MeetingDAO;
 
-
-import local.entities.Room;
-import local.repositories.RoomDAO;
-
-
 public final class AppMeeting {
+    private static MeetingDAO meet = new MeetingDAO();
 
-    private static void checkMeeting() {
-        MeetingDAO meet = new MeetingDAO();
+    @SuppressWarnings("unused")
+    private static void checkMeetingInitial() {
         //CREAR REGISTRO
         Meeting m1 = meet.save(new Meeting("Primera reunion" , LocalDateTime.now().plusDays(2)));
         Meeting m2 = meet.save(new Meeting("Segunda reunion" , LocalDateTime.now().plusDays(3)));
         System.out.println("1º Meet: " + m1);
         System.out.println("2º Meet: " + m2);
+
         //MOSTRAR TODOS LOS REGISTROS
         System.out.println("FindAll: " + meet.findAll());
         //MOSTRAR REGISTRO POR ID
@@ -61,8 +57,18 @@ public final class AppMeeting {
 
 
     public static void main(String[] args) {
-        checkMeeting();
-        //System.exit(0); // salir de la aplicacion
+        //checkMeetingInitial();
+        //System.exit(0); // salir de la aplicación
+        System.out.println("------ Find All---------");
+        System.out.println(meet.findAll());
 
+        System.out.println("------ Reunion FindByDate ---------");
+        //List<Meeting> m = meet.findByDate(LocalDateTime.of(2025,07,25, 10,38,23));
+        List<Meeting> m1 = meet.findByDate(LocalDate.of(2025, 07, 25));
+        //System.out.println(m);
+        System.out.println(m1);
+        System.out.println("------ Next meeting ---------");
+        Meeting m2 = meet.nextMeetingBasic();
+        System.out.println(m2);
     }
 }

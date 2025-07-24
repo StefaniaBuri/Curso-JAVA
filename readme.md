@@ -511,5 +511,44 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 
 - Review: ProductFileRepository
 - Persistencia en bases de datos (DB)
+  - Bases Datos: SQL y No SQL. Historia
+    - MySQL -> Server y Cliente (workbench)
+    - Creamos DB (Schema)
+  - Nuevo proyecto Maven
+  - Dependencias
+    - Connector MySql
+    - Hibernate (ORM)
+    - dotenv-java (info sensible)
+  - META-INFO\persistence.xml
+  - EntityManager
 
+## Día 36
+
+- Entities
+  - Meeting
+  - Room
+  - Record
+  - Person
+- Anotaciones Hibernate
+  - @Entity, @Table, @Column, @Id
+
+- DAO (Repository)
+  - Interface
+  - AbstractDao
+  - MeetingDao -> Pruebas
+- Propuesta: resto de los DAO
+
+## Día 37
+
+- Review todo DB
+- Añadir y probar DAOs
+  - Room
+  - Record
+  - Person
+  - Meeting
+- Métodos específicos en los DAO
+  - Queries tipadas
+  - Queries parametrizadas
+
+## Día 38
 

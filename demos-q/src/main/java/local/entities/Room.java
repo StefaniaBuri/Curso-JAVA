@@ -1,8 +1,14 @@
 package local.entities;
 
+import java.util.List;
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,9 +19,12 @@ public class Room {
     @Id
     private String id; //String porque lo voy hacer manualmente, no se autogenera
 
+    @Column(unique = true)
     private String name;
-
     private int capacity;
+
+    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL , fetch = FetchType.LAZY) //room es el nombre de la variable declarada en Meeting.java
+    private Set<Meeting> meetings;
 
     public Room() {
         //JPA default constructor
@@ -29,7 +38,6 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room [id=" + id + ", name=" + name + ", capacity=" + capacity + "]";
+        return "Room [id=" + id + ", name=" + name + ", capacity=" + capacity + ", meetings=" + meetings + "]";
     }
-
 }
