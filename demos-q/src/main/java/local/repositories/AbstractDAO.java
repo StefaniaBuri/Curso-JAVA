@@ -27,8 +27,8 @@ public abstract class AbstractDAO<E> implements IDAO<E> {
     public List<E> findAll() {
         //Lanzar query - OPTION 1
         String finalSQL = " FROM " + entityClass.getCanonicalName();
-
         //Query q = entityManager.createQuery(finalSQL, entityClass);
+        // return (List<E>) q.getResultList();
         return entityManager.createQuery(finalSQL, entityClass).getResultList(); //devuelve una query(busqueda temporal) y devuelve una lista
     }
 

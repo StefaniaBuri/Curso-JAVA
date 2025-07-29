@@ -1,18 +1,44 @@
 package local;
 
+import java.util.Collection;
+import java.util.Optional;
+
 import local.entities.Room;
 import local.repositories.RoomDAO;
 
 public class AppRoom {
     private static RoomDAO room = new RoomDAO();
 
-    private static void showRooms() {
-        System.out.println("----------- Find All -----------");
-        System.out.println(room.findAll());
+    private static void showList(Collection<Room> collection) {
+        if (collection == null || collection.isEmpty()) {
+            System.out.println("No items found.");
+            return;
+        }
+        System.out.println("Rooms: [");
+        collection.forEach(item -> System.out.println(item.toString(true)));
+        System.out.println("]");
+        System.out.println();
     }
 
-    private static void checkRoom() {
+    private static void showOptional(Optional<Room> optionalItem) {
+        optionalItem.ifPresentOrElse(
+                //
+                item -> System.out.println(item.toString(true)),
+                //
+                () -> System.out.println("Sala no encontrada"));
+    }
 
+    private static void showRooms() {
+        System.out.println("----------- Find All -----------");
+        showList(room.findAll());
+        System.out.println("----------- Find by ID valid -----------");
+        showOptional(room.findById("S0101"));
+        System.out.println("----------- Find by ID invalid -----------");
+        showOptional(room.findById(100));
+    }
+
+    @SuppressWarnings("unused")
+    private static void checkRoom() {
         try {
             room.save(new Room("S0102", "Sala Principal",10));
             room.save(new Room("S0201", "Sala pequeña",5));
