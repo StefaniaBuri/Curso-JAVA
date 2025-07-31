@@ -552,3 +552,13 @@ Empresa: CAS - https://cursoscastraining.es/centro-de-formacion-digital-san-blas
 
 ## Día 38
 
+- Queries parametrizadas (continuación)
+- Relaciones entre tablas
+  - 1:1 -> meetings (...) - records (@OneToOne)
+  - N:1 -> meetings (@ManyToOne) - rooms (@OneToMany)
+  - N:N -> meetings (@ManyToMany) - persons(@ManyToMany)
+
+## Día 39
+
+- Review: Relaciones entre tablas
+  - Problemas
